@@ -1,4 +1,5 @@
 var sequelize = require('sequelize');
+
 //inisialisasi
 var objSequelize = new sequelize(
     {
