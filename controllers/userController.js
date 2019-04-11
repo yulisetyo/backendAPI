@@ -1,4 +1,16 @@
 var model = require('../model/modeluser');
+var User = require('../model/user');
+//get all user
+exports.users = (req, res)=>{
+    User.getAll().then(user=>{res.json(user)})
+        .catch(err=>res.send(err));
+}
+
+//get user by id
+exports.user=(req, res)=>{
+    User.getUser(req.params).then(user=>{res.json(user)})
+    .catch(err=>res.send(err));
+}
 
 //login
 exports.login = function(req, res){
@@ -11,4 +23,8 @@ exports.login = function(req, res){
     } else {
         res.send('LOGIN ENDPOINT');
     }
+}
+
+exports.add = function(req, res){
+    User.addUser(req.body);
 }
