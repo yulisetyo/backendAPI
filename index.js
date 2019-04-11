@@ -9,6 +9,9 @@ var logger = function(req, res, next){
     console.log('someone accessing your endpoint...');
     next();
 }
+//inisialisasi passport
+var passport = require('passport');
+app.use(passport.initialize());
 
 //parse application/JSON
 app.use(parser.json())
@@ -19,7 +22,6 @@ app.use(cors());
 app.use(logger);
 //definisikan endpoint
 app.use('/', router);
-
 
 //listening post when server is up and running
 app.listen(
