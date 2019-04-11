@@ -31,7 +31,8 @@ exports.authUser = function(req, res){
                 if(result.length > 0) {
                     var payload={
                         id: result[0].id,
-                        name: result[0].name
+                        name: result[0].name,
+                        company: result[0].company
                     }
                     // create jwt
                     var token = jwt.sign(payload, 'ini_secret_key');
