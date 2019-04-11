@@ -23,6 +23,7 @@ exports.getUser = async (obj)=>{
     return await User.findOne({where: obj});
 }
 
+//add user
 exports.addUser = async (obj)=>{
     return await User.create(obj);
 }
