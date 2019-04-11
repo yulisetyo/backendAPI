@@ -38,7 +38,9 @@ router.get('/user/:id',
         model.getUser(req, res);
     });
 */
-router.get('/user/:id',controller.user)
+router.get('/user/:id', 
+    passport.authenticate('jwt', {session: false}),
+    controller.user)
 
 /*
 router.post('./user', 
